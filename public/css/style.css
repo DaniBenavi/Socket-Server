@@ -1,0 +1,502 @@
+/* ==========================================================
+   Programa de Colas — estilos compartidos
+   ========================================================== */
+
+:root {
+  --ink: #10222f;
+  --ink-2: #183544;
+  --ink-3: #25495b;
+  --ticket: #ffc93c;
+  --ticket-dark: #e6ad14;
+  --teal: #1f8a8a;
+  --teal-dark: #176b6b;
+  --bone: #eef2f4;
+  --paper: #ffffff;
+  --line: #d5dde2;
+  --muted: #5d7280;
+
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+
+  --radius: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: var(--bone);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Foco visible para teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--ticket);
+  outline-offset: 3px;
+}
+
+/* ---------- Botones (sobre Bootstrap) ---------- */
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.7rem 1.25rem;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--ink);
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-hover-bg: var(--ink-3);
+  --bs-btn-hover-border-color: var(--ink-3);
+  --bs-btn-active-bg: var(--ink-3);
+  --bs-btn-active-border-color: var(--ink-3);
+  --bs-btn-disabled-bg: var(--ink);
+  --bs-btn-disabled-border-color: var(--ink);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--ticket);
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--ticket);
+  --bs-btn-hover-bg: var(--ticket-dark);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-border-color: var(--ticket-dark);
+  --bs-btn-active-bg: var(--ticket-dark);
+  --bs-btn-active-color: var(--ink);
+  --bs-btn-active-border-color: var(--ticket-dark);
+  --bs-btn-disabled-bg: var(--ticket);
+  --bs-btn-disabled-color: var(--ink);
+  --bs-btn-disabled-border-color: var(--ticket);
+}
+
+.form-control {
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+}
+
+.form-control:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.25rem rgba(31, 138, 138, 0.2);
+}
+
+/* ==========================================================
+   Inicio (index.html)
+   ========================================================== */
+
+.page-home {
+  max-width: 960px;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.home-head {
+  margin-bottom: 2.5rem;
+}
+
+.home-title {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+}
+
+.home-sub {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 46ch;
+  margin: 0;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  height: 100%;
+}
+
+.panel h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.panel p {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+
+.panel .btn + .btn {
+  margin-left: 0.4rem;
+}
+
+.panel-dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.panel-dark p {
+  color: #a9bcc7;
+}
+
+.panel-dark .form-control {
+  background: var(--ink-2);
+  border-color: var(--ink-3);
+  color: #fff;
+}
+
+.panel-dark .form-control::placeholder {
+  color: #7f98a6;
+}
+
+.panel-dark .form-control:focus {
+  border-color: var(--ticket);
+  box-shadow: 0 0 0 0.25rem rgba(255, 201, 60, 0.25);
+}
+
+.panel-dark .btn-primary {
+  --bs-btn-bg: var(--ticket);
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--ticket);
+  --bs-btn-hover-bg: var(--ticket-dark);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-border-color: var(--ticket-dark);
+  --bs-btn-active-bg: var(--ticket-dark);
+  --bs-btn-active-color: var(--ink);
+  width: 100%;
+}
+
+/* ==========================================================
+   Escritorio (desk.html)
+   ========================================================== */
+
+.page-desk {
+  max-width: 960px;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.desk-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.desk-head h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+.desk-head a {
+  color: var(--teal-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.desk-head a:hover {
+  text-decoration: underline;
+}
+
+.current-card {
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.current-card h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #a9bcc7;
+  margin: 0 0 0.5rem;
+}
+
+.current-card h4 small {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ticket) !important;
+}
+
+.current-card .btn {
+  align-self: flex-start;
+  margin-top: 0 !important;
+  font-size: 1.1rem;
+  padding: 0.9rem 1.6rem;
+  --bs-btn-bg: var(--ticket);
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--ticket);
+  --bs-btn-hover-bg: var(--ticket-dark);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-border-color: var(--ticket-dark);
+  --bs-btn-active-bg: var(--ticket-dark);
+  --bs-btn-active-color: var(--ink);
+}
+
+.queue-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  height: 100%;
+}
+
+.queue-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.queue-card #lbl-pending {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin: 1rem 0 0;
+  color: var(--ink);
+}
+
+.queue-card .alert {
+  border: 0;
+  border-radius: 10px;
+  background: #e3f1f1;
+  color: var(--teal-dark);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   Nuevo ticket (new-ticket.html) — pantalla de quiosco
+   ========================================================== */
+
+.page-kiosk {
+  background: var(--ink);
+  color: #fff;
+}
+
+.page-kiosk .kiosk {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.ticket-stub {
+  position: relative;
+  width: min(100%, 520px);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  /* muescas laterales tipo boleto */
+  -webkit-mask:
+    radial-gradient(circle 16px at 0 58%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 16px at 100% 58%, transparent 98%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle 16px at 0 58%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 16px at 100% 58%, transparent 98%, #000) right / 51% 100% no-repeat;
+}
+
+.ticket-stub-top {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px dashed var(--line);
+}
+
+.ticket-caption {
+  display: block;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+#lbl-new-ticket {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 14vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.ticket-stub .btn {
+  width: 100%;
+  font-size: 1.35rem;
+  padding: 1.1rem 1.5rem;
+  border-radius: 12px;
+}
+
+/* ==========================================================
+   Pantalla pública (public.html)
+   ========================================================== */
+
+.page-board {
+  background: var(--ink);
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.board {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.board-current {
+  background: var(--ink-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+/* borde perforado entre el turno actual y el historial */
+.board-current::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  right: 0;
+  border-right: 4px dashed var(--ink-3);
+}
+
+.board-label {
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  color: #a9bcc7;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-current-number {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 12vw, 11rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ticket);
+}
+
+.ticket-current-desk {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.6rem;
+  border-radius: 999px;
+  background: var(--ticket);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.4vw, 2.8rem);
+  font-weight: 700;
+}
+
+.board-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.board-history .board-label {
+  margin-bottom: 0;
+}
+
+.history-item {
+  background: var(--ink-2);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ticket-secondary {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.history-item .desk-name {
+  color: #a9bcc7;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-align: right;
+}
+
+/* Pantallas angostas: apilar */
+@media (max-width: 760px) {
+  .page-board {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .board-current {
+    min-height: 55vh;
+  }
+
+  .board-current::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
