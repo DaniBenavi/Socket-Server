@@ -23,16 +23,17 @@
 
   <body class="container page-desk">
     <div class="desk-head">
-      <h1>Escritorio</h1>
+      <h1 id="deskHeader">Escritorio</h1>
       <a href="index.html">Volver al inicio</a>
     </div>
 
     <div class="row g-4">
       <div class="col-12 col-md-8">
         <div class="current-card">
-          <h4>Atendiendo a <small class="text-primary">....</small></h4>
+          <h4>Atendiendo a <small id="current-Ticket" class="text-primary">....</small></h4>
 
-          <button class="btn btn-primary mt-5">Atender siguiente ticket</button>
+          <button id="btn-draw" class="btn btn-primary mt-5">Atender siguiente</button>
+          <button id="btn-done" class="btn btn-primary mt-5">Terminar</button>
         </div>
       </div>
 
@@ -44,7 +45,7 @@
             <span>Ya no hay más tickets</span>
           </div>
 
-          <h1 id="lbl-pending">10</h1>
+          <h1 id="lbl-pending">0</h1>
         </div>
       </div>
     </div>
